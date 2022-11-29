@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="TestCommit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/Directions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneInterface.java" afterDir="false" />
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Drone Start W1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669736551068</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Drone Start W1">
+      <created>1669737805865</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669737805865</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,6 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TestCommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestCommit" />
+    <MESSAGE value="Drone Start W1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drone Start W1" />
   </component>
 </project>
