@@ -17,6 +17,12 @@ public class DroneArena {
         RG = new Random();
         DroneList = new ArrayList<Drone>();
     }
+    public int getX(){
+        return MaxX;
+    }
+    public int getY(){
+        return MaxY;
+    }
     public void addDrone(){
         int XPosD,YPosD;
         do {
@@ -41,6 +47,11 @@ public class DroneArena {
             Temp = Temp + DroneList.get(i).toString() + "\n";
         }
         return Temp;
+    }
+    public void ShowDrones(ConsoleCanvas C){
+        for(int i = 0; i < DroneList.size();i++) {
+            DroneList.get(i).displayDrone(C);
+        }
     }
     public static void main(String[] args) {
         DroneArena a = new DroneArena(20, 10);	// create drone arena

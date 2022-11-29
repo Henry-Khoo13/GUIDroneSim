@@ -22,6 +22,9 @@ public class Drone {
             return false;
         }
     }
+    public void displayDrone(ConsoleCanvas C){
+        C.showIt(XPos,YPos,"D");
+    }
     public static void main(String[] args) {
         Drone d = new Drone(5, 3);		// create drone
         System.out.println(d.toString());	// print where is

@@ -30,6 +30,11 @@ public class DroneInterface {
                 case 'a' :
                     myArena.addDrone();	// add a new drone to arena
                     break;
+                case 'D':
+                case 'd':
+                    doDisplay();
+                    break;
+
                 case 'I' :
                 case 'i' :
                     System.out.print(myArena.toString());
@@ -41,7 +46,11 @@ public class DroneInterface {
 
         s.close();									// close scanner
     }
-
+    void doDisplay(){
+        ConsoleCanvas Arena = new ConsoleCanvas(myArena.getX(), myArena.getY());
+        myArena.ShowDrones(Arena);
+        System.out.println(Arena.toString());
+    }
     public static void main(String[] args) {
         DroneInterface r = new DroneInterface();	// just call the interface
     }

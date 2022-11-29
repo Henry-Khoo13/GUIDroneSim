@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Drone Start W1">
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="WEEK 1 DONE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/ConsoleCanvas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669737805865</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="WEEK 1 DONE">
+      <created>1669740770495</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669740770495</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,6 +89,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TestCommit" />
     <MESSAGE value="Drone Start W1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drone Start W1" />
+    <MESSAGE value="WEEK 1 DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="WEEK 1 DONE" />
   </component>
 </project>
