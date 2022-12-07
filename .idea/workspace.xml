@@ -46,6 +46,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\Documents\GUIProjectWork\DroneGUIDemo\src\main\java\GUIDroneSim" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="com.example.droneguidemo" />
@@ -54,7 +57,7 @@
       <recent name="DroneSimulation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DroneGUI">
+  <component name="RunManager" selected="Application.DroneInterface">
     <configuration name="DroneGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUIDroneSim.DroneGUI" />
       <module name="DroneGUIDemo" />
@@ -62,6 +65,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUIDroneSim.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DroneInterface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DroneConsole.DroneInterface" />
+      <module name="DroneGUIDemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DroneConsole.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,11 +100,13 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DroneInterface" />
       <item itemvalue="Application.DroneGUI" />
       <item itemvalue="Application.SolarViewer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DroneInterface" />
         <item itemvalue="Application.DroneGUI" />
         <item itemvalue="Application.SolarViewer" />
       </list>
