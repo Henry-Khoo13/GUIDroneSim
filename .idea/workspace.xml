@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="WEEK 1 DONE">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/ConsoleCanvas.java" afterDir="false" />
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="WEEK 4 ish DONE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/MyCanvas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/SimpleSolar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/SolarAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/SolarBorderPane.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/SolarSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SolarSystem/SolarViewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneArena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/DroneInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/droneguidemo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/droneguidemo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneSimulation/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +40,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Henry/Documents/GUIProjectWork/DroneGUIDemo&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.52885747&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.example.droneguidemo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="DroneSimulation" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DroneGUI">
+    <configuration name="DroneGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUIDroneSim.DroneGUI" />
+      <module name="DroneGUIDemo" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Henry\Documents\JavaGUI\javafx-sdk-19\lib --add-modules=javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUIDroneSim.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolarViewer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SolarSystem.SolarViewer" />
+      <module name="DroneGUIDemo" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Henry\Documents\JavaGUI\javafx-sdk-19\lib --add-modules=javafx.controls" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SolarSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DroneGUI" />
+      <item itemvalue="Application.SolarViewer" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DroneGUI" />
+        <item itemvalue="Application.SolarViewer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669740770495</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="WEEK 4 ish DONE">
+      <created>1669742537910</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742537910</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +160,11 @@
     <MESSAGE value="TestCommit" />
     <MESSAGE value="Drone Start W1" />
     <MESSAGE value="WEEK 1 DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="WEEK 1 DONE" />
+    <MESSAGE value="WEEK 4 ish DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="WEEK 4 ish DONE" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
