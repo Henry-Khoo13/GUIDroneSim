@@ -35,7 +35,7 @@ public class DroneGUI extends Application {
 	private DroneArena arena;					//Drone Arena used to perform the calculations of drone movement on canvas
 
 	/**
-	 * function to show in a box ABout the programme
+	 * function to show in a box About the programme
 	 */
 	private void showAbout() {
 	    Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
@@ -44,7 +44,33 @@ public class DroneGUI extends Application {
 	    alert.setContentText("Henry's Drone GUI");			// give text
 	    alert.showAndWait();										// show box and wait for user to close
 	}
+	/**
+	 * function to show in a box Instructions the programme
+	 */
+	private void showInstructions() {
+		Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
+		alert.setTitle("About");									// say is About
+		alert.setHeaderText(null);
+		alert.setContentText("The Following Program is a simulation of multiple different drones." + "\n" +
+							"Click the buttons at the bottom of the screen to add drones" + "\n" +
+							"Click on the screen itself to add food which drones can eat for points"+ "\n" +
+				            "Note: You cannot add food on top of drones or in the middle to block drones spawning in");		// give text
+		alert.showAndWait();										// show box and wait for user to close
+	}
 
+	/**
+	 * function to show in a box Colour Codes the programme
+	 */
+	private void showColourCodes() {
+		Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
+		alert.setTitle("About");									// say is About
+		alert.setHeaderText(null);
+		alert.setContentText("Blue - Simple Drone" + "\n" +
+				"Orange - Reflection Drone" + "\n" +
+				"Black - Object"+ "\n" +
+				"Green - Food");		// give text
+		alert.showAndWait();										// show box and wait for user to close
+	}
 	 /**
 	  * set up the mouse event - when mouse pressed, put Drone there
 	  * @param canvas
@@ -86,7 +112,24 @@ public class DroneGUI extends Application {
             }	
 		});
 		mHelp.getItems().addAll(mAbout);						// add About to Help main item
-		
+
+		MenuItem mInformation = new MenuItem("Instructions");				// add About sub men item
+		mInformation.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				showInstructions();									// and its action to print about
+			}
+		});
+		mHelp.getItems().addAll(mInformation);
+
+		MenuItem mColourCodes = new MenuItem("Colour Codes for Drones");				// add About sub men item
+		mColourCodes.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent actionEvent) {
+				showColourCodes();									// and its action to print about
+			}
+		});
+		mHelp.getItems().addAll(mColourCodes);
 		menuBar.getMenus().addAll(mFile, mHelp);				// set main menu with File, Help
 		return menuBar;											// return the menu
 	}
@@ -112,7 +155,7 @@ public class DroneGUI extends Application {
 	       }
 	    });
 
-	    Button btnAddC = new Button(" Ctr");				// now button for Add drone center
+	    Button btnAddC = new Button(" C");				// now button for Add drone center
 	    btnAddC.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent event) {
@@ -121,7 +164,7 @@ public class DroneGUI extends Application {
 	       }
 	    });
 
-		Button btnAddR = new Button(" Rand");				// now button for add random simple
+		Button btnAddR = new Button(" R");				// now button for add random simple
 		btnAddR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -132,7 +175,7 @@ public class DroneGUI extends Application {
 
 
 
-		Button btnAddCR = new Button("Ctr");				// now button for Add drone center
+		Button btnAddCR = new Button("C");				// now button for Add drone center
 		btnAddCR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -141,7 +184,7 @@ public class DroneGUI extends Application {
 			}
 		});
 
-		Button btnAddRR = new Button("Rand");				// now button for random reflect
+		Button btnAddRR = new Button("R");				// now button for random reflect
 		btnAddRR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -150,7 +193,7 @@ public class DroneGUI extends Application {
 			}
 		});
 
-		Button btnAddRO = new Button("Rand");				// now button for Random object
+		Button btnAddRO = new Button("R");				// now button for Random object
 		btnAddRO.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -161,7 +204,7 @@ public class DroneGUI extends Application {
 
 
 
-		Button btnClear = new Button("Clear Drones");				// now button for Clear Drone
+		Button btnClear = new Button("Clear");				// now button for Clear Drone
 		btnClear.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
