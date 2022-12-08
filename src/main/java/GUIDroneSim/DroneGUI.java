@@ -261,6 +261,7 @@ public class DroneGUI extends Application {
 		// TODO Auto-generated method stub
 		primaryStage.setTitle("29007434's Drone Program");
 	    BorderPane bp = new BorderPane();
+		bp.getStyleClass().add("-fx-background-color: pink");
 	    bp.setPadding(new Insets(10, 20, 10, 20));
 
 	    bp.setTop(setMenu());											// put menu at the top
