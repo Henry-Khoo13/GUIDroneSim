@@ -31,7 +31,7 @@ public class DroneSimple extends Drone {
 		Speed = is;
 
 		DroneDirection = di;
-		switch(DroneDirection) {
+		switch(DroneDirection) {//Applying direction
 			case North:
 				Cx = 0*Speed;
 				Cy = -1*Speed;
@@ -68,7 +68,6 @@ public class DroneSimple extends Drone {
 	 * adjustDrone
 	 * Here, move Drone depending direction, applying it's change in x and y
 	 */
-
 	@Override
 	protected void adjustDrone() {
 		//double radAngle = bAngle*Math.PI/180;		// put angle in radians

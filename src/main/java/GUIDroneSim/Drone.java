@@ -4,7 +4,7 @@ import GUIDroneSim.Directions.Direction;
 
 public abstract class Drone {
 	protected double x, y, rad;						// position and size of Drone
-	protected int Cx,Cy;
+	protected int Cx,Cy;						//The amount each x and Y will change
 	protected char col;								// used to set colour
 	static int Counter = 0;						// used to give each Drone a unique identifier
 	protected int DroneID;							// unique identifier for item

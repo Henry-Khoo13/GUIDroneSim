@@ -57,7 +57,7 @@ public class DroneArena {
 	
 	public void adjustDrones() {
 		for (Drone D : DroneList) D.adjustDrone();
-	}
+	}//Adjust all the drone positions
 	/**
 	 * return list of strings defining each Drone
 	 * @return
@@ -77,7 +77,6 @@ public class DroneArena {
 	 * @param notID			identify of Drone not to be checked
 	 * @return				new angle 
 	 */
-	
 	public double CheckDroneAngle(double x, double y, double rad, double ang, int notID) {
 		double ans = ang;
 		if (x < rad || x > xSize - rad) ans = 180 - ans;
@@ -93,14 +92,26 @@ public class DroneArena {
 		return ans;		// return the angle
 	}
 
+	/**
+	 * UpdateDronePosition
+	 * Evaluate if the Drone is against a wall or colliding with another drone
+	 * If it isn't continue in the same direction by returning the same input direction
+	 * If it is colliding with something, return a new direction based on what it's colliding with
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @param D
+	 * @param notID
+	 * @return
+	 */
 	public Direction UpdateDroneDirection(double x, double y, double rad, Direction D, int notID) {
-		Direction TDirection = D;
-		if (x < rad) return Direction.North;
-		if (x > xSize - rad) return  Direction.South;
-		if (y < rad) return Direction.East;
-		if (y > ySize - rad) return Direction.West;
+		Direction TDirection = D;//Temporary Direction
+		if (x < rad) return Direction.North;//If it's colliding with the West  wall go north
+		if (x > xSize - rad) return  Direction.South;//If it's colliding with the East  wall go South
+		if (y < rad) return Direction.East;//If it's colliding with the North  wall go East
+		if (y > ySize - rad) return Direction.West;//If it's colliding with the North  South go West
 		//if((x < rad)&&(y < rad))
-		for (Drone Dr : DroneList) {
+		for (Drone Dr : DroneList) {//If it's colliding with a drone reverse the direction of the drone
 			if (Dr.getID() != notID && Dr.hitting(x, y, rad)) {
 				switch(D){
 					case North: 
@@ -118,51 +129,95 @@ public class DroneArena {
 				}
 			}
 		}	
-		return TDirection;
+		return TDirection;//return direction
 	}
+
+	/**
+	 * AdjustXAgainstWall
+	 * To prevent the drone from constantly grinding against the wall affecting the checkdrone function
+	 * This function provides X coordinates to pull the drone away from the Wall
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @param D
+	 * @param Speed
+	 * @return X coordinate adjustment
+	 */
 	public double AdjustXAgainstWall(double x, double y, double rad, Direction D, double Speed) {
-		double ans=0;
-		if (x < rad) ans = (Speed*1);
-		if (x > xSize - rad) ans = -(Speed*1);
-		return ans;
+		double ans=0; //Temporary X var
+		if (x < rad) ans = (Speed*1);//If the drone is hitting the west wall shift the drone to the east by one speed movement
+		if (x > xSize - rad) ans = -(Speed*1);//If the drone is hitting the east wall shift the drone to the west by one speed movement
+		return ans; //return the adjustment to X
 
 	}
+
+	/**
+	 * 	 AdjustYAgainstWall
+	 * 	 to prevent the drone from constantly grinding against the wall affecting the checkdrone function
+	 * 	 This function provides Y coordinates to pull the drone away from the Wall
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @param D
+	 * @param Speed
+	 * @return Y coordinates Adjustment
+	 */
 	public double AdjustYAgainstWall(double x, double y, double rad, Direction D, double Speed) {
-		double ans=0;
-		if (y < rad) return (Speed*1);
-		if (y > ySize - rad) return -(Speed*1);
+		double ans=0; //Temporary Y var
+		if (y < rad) return (Speed*1);//If the drone is hitting the North wall shift the drone to the south by one speed movement
+		if (y > ySize - rad) return -(Speed*1);//If the drone is hitting the South wall shift the drone to the North by one speed movement
 		return ans;
 	}
 
 
-
+	/**
+	 * AddDroneSimple
+	 * adds a simple drone to the dronelist
+	 * to the center
+	 */
 	public void addDroneSimple() {
 		boolean AddDrone = true;
-		for (Drone Dr : DroneList) {
+		for (Drone Dr : DroneList) {//checks if any drone is on the center location before placing the drone
 			if(Dr.hitting(xSize/2, ySize/2, 15)) AddDrone = false;
 		}
 		if(AddDrone == true) DroneList.add(new DroneSimple(xSize/2, ySize/2, 15, Direction.getRandomDirection(), 1));
 	}
+
+	/**
+	 * AddDroneReflect
+	 * adds a reflect drone to the dronelist
+	 * to the center
+	 */
 	public void addDroneReflect() {
 		boolean AddDrone = true;
-		for (Drone Dr : DroneList) {
+		for (Drone Dr : DroneList) {//checks if any drone is on the center location before placing the drone
 			if(Dr.hitting(xSize/2, ySize/2, 15)) AddDrone = false;
 		}
 		if(AddDrone == true) DroneList.add(new DroneReflect(xSize/2, ySize/2, 15, 45, 1));
 	}
-	public void ClearDrones(){
+	public void ClearDrones(){//Clears the drone list
 		DroneList = new ArrayList<Drone>();
 	}
 
 
-
+	/**
+	 * Checks if the drone location is valid
+	 * Used in the adding of the drones in random locations
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @return
+	 */
 	public boolean checkDroneLocationValid(double x, double y, double rad) {
+		/*
+		Checks if the Drone is against a wall
+		 */
 		if (x < rad) return false;
 		if (x > xSize - rad) return  false;
 		if (y < rad) return false;
 		if (y > ySize - rad) return false;
-		//if((x < rad)&&(y < rad))
-		for (Drone Dr : DroneList) {
+
+		for (Drone Dr : DroneList) {//Checks if the drone is on another drone
 			if (Dr.hitting(x, y, rad)) {
 				return false;
 			}
@@ -170,20 +225,33 @@ public class DroneArena {
 		return true;
 	}
 
+	/**
+	 * checkDroneLocationCenterValid
+	 * Used to prevent placing objects on the center which would block the add drone center function
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @return
+	 */
 	public boolean checkDroneLocationCenterValid(double x, double y, double rad) {
 		if (((xSize/2)-(rad*5) < x) && (x < (xSize/2)+(rad*5))&&((ySize/2)-(rad*5) < y) && (y < (ySize/2)+(rad*5))) return false;
 		return true;
 	}
+
+	/**
+	 * addDroneRandomSimple
+	 * Add a simple drone to a random location
+	 */
 	public void addDroneRandomSimple(){
 		Random RandomDirection = new Random();
 		double Tx,Ty;
 		int Counter = 0;
 		try {
-			do {
+			do {//Generates a random location and checks if the location is valid before placing the drone
 				Tx = RandomDirection.nextDouble(xSize);
 				Ty = RandomDirection.nextDouble(ySize);
 				Counter++;
-				if(Counter > 100){
+				if(Counter > 100){//used for exception handling to stop the loop if it goes too far and to generate an error for the user
 					throw new RuntimeException();
 				}
 			}
@@ -194,17 +262,20 @@ public class DroneArena {
 				System.out.println(e);
 		}
 	}
-
+	/**
+	 * addDroneRandomReflect
+	 * Add a reflect drone to a random location
+	 */
 	public void addDroneRandomReflect(){
 		Random RandomDirection = new Random();
 		double Tx,Ty;
 		int Counter = 0;
 		try {
-			do {
+			do {//Generates a random location and checks if the location is valid before placing the drone
 				Tx = RandomDirection.nextDouble(xSize);
 				Ty = RandomDirection.nextDouble(ySize);
 				Counter++;
-				if(Counter > 100){
+				if(Counter > 100){//used for exception handling to stop the loop if it goes too far and to generate an error for the user
 					throw new RuntimeException();
 				}
 			}
@@ -216,16 +287,20 @@ public class DroneArena {
 		}
 	}
 
+	/**
+	 * addDroneObject
+	 * Add a Object drone to a random location
+	 */
 	public void addDroneObject(){
 		Random RandomDirection = new Random();
 		int Counter = 0;
+		double Tx, Ty;
 		try {
-			double Tx, Ty;
-			do {
+			do {//Generates a random location and checks if the location is valid before placing the drone
 				Tx = RandomDirection.nextDouble(xSize);
 				Ty = RandomDirection.nextDouble(ySize);
 				Counter++;
-				if(Counter > 100){
+				if(Counter > 100){//used for exception handling to stop the loop if it goes too far and to generate an error for the user
 					throw new RuntimeException();
 				}
 			}

@@ -6,13 +6,13 @@ public class DroneObject extends Drone {
         y = iy;
         rad = ir;
         DroneID = Counter++;			// set the identifier and increment class static
-        col = 'B';
+        col = 'B';//Colour black
     }
     @Override
-    protected void checkDrone(DroneArena DA) {}
+    protected void checkDrone(DroneArena DA) {}//No checks needed since it doesn't update
 
     @Override
-    protected void adjustDrone() {}
+    protected void adjustDrone() {}//Empty since this drone doesn't move
 
     /**
      * return string defining Drone type

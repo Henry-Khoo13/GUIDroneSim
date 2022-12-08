@@ -29,10 +29,10 @@ import javafx.stage.Stage;
  * Drones GUI application
  */
 public class DroneGUI extends Application {
-	private MyCanvas mc;
+	private MyCanvas mc;								//Canvas used to display graphics
 	private AnimationTimer timer;								// timer used for animation
 	private VBox rtPane;										// vertical box for putting info
-	private DroneArena arena;
+	private DroneArena arena;					//Drone Arena used to perform the calculations of drone movement on canvas
 
 	/**
 	 * function to show in a box ABout the programme
@@ -116,16 +116,16 @@ public class DroneGUI extends Application {
 	    btnAddC.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent event) {
-	           	arena.addDroneSimple();								// and its action to stop the timer
+	           	arena.addDroneSimple();								// Add a simple drone
 	           	drawWorld();
 	       }
 	    });
 
-		Button btnAddR = new Button(" Rand");				// now button for stop
+		Button btnAddR = new Button(" Rand");				// now button for add random simple
 		btnAddR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.addDroneRandomSimple();							// and its action to stop the timer
+				arena.addDroneRandomSimple();							// Add a simple drone
 				drawWorld();
 			}
 		});
@@ -136,25 +136,25 @@ public class DroneGUI extends Application {
 		btnAddCR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.addDroneReflect();								// and its action to stop the timer
+				arena.addDroneReflect();								// Add a reflect drone
 				drawWorld();
 			}
 		});
 
-		Button btnAddRR = new Button("Rand");				// now button for stop
+		Button btnAddRR = new Button("Rand");				// now button for random reflect
 		btnAddRR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.addDroneRandomReflect();							// and its action to stop the timer
+				arena.addDroneRandomReflect();							// Add a reflect drone
 				drawWorld();
 			}
 		});
 
-		Button btnAddRO = new Button("Rand");				// now button for stop
+		Button btnAddRO = new Button("Rand");				// now button for Random object
 		btnAddRO.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.addDroneObject();							// and its action to stop the timer
+				arena.addDroneObject();							// Add a object drone
 				drawWorld();
 			}
 		});
@@ -165,7 +165,7 @@ public class DroneGUI extends Application {
 		btnClear.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.ClearDrones();							// and its action to stop the timer
+				arena.ClearDrones();							// Clears drones
 				drawWorld();
 			}
 		});														// now add these buttons + labels to a HBox
