@@ -49,7 +49,7 @@ public class DroneGUI extends Application {
 	 */
 	private void showInstructions() {
 		Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
-		alert.setTitle("About");									// say is About
+		alert.setTitle("Instructions");									// say is Instructions
 		alert.setHeaderText(null);
 		alert.setContentText("The Following Program is a simulation of multiple different drones." + "\n" +
 				"Click the buttons at the bottom of the screen to add drones" + "\n" +
@@ -68,7 +68,7 @@ public class DroneGUI extends Application {
 	 */
 	private void showColourCodes() {
 		Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
-		alert.setTitle("About");									// say is About
+		alert.setTitle("Colour Codes");									// say is Colour Codes
 		alert.setHeaderText(null);
 		alert.setContentText("Blue - Simple Drone" + "\n" +
 				"Orange - Reflection Drone" + "\n" +

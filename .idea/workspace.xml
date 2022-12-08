@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Final">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DroneGUIDemo_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/ConsoleCanvas.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/Directions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/Drone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/DroneArena.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/DroneGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/DroneInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/GUICanvas.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670500078126</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Final">
+      <created>1670518297883</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670518297883</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
