@@ -7,6 +7,7 @@ public class DroneObject extends Drone {
         rad = ir;
         DroneID = Counter++;			// set the identifier and increment class static
         col = 'B';//Colour black
+        Eaten = false;
     }
     @Override
     protected void checkDrone(DroneArena DA) {}//No checks needed since it doesn't update

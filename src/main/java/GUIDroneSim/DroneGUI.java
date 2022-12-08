@@ -54,7 +54,7 @@ public class DroneGUI extends Application {
 	    	       new EventHandler<MouseEvent>() {
 	    	           @Override
 	    	           public void handle(MouseEvent e) {
-	    	        	   	//arena.setPaddle(e.getX(), e.getY());
+						    arena.addDroneFood(e.getX(), e.getY());
 	  		            	drawWorld();							// redraw world
 	  		            	drawStatus();
 	    	           }
@@ -182,13 +182,6 @@ public class DroneGUI extends Application {
 				btnClear);
 	}
 
-	/**
-	 * Show the score .. by writing it at position x,y
-	 * @param x
-	 * @param y
-	 * @param score
-	 */
-	public void showScore (double x, double y, int score) {mc.showText(x, y, Integer.toString(score));}
 	/** 
 	 * draw the world (Drones and Canvas)
 	 */
@@ -203,6 +196,7 @@ public class DroneGUI extends Application {
 	public void drawStatus() {
 		rtPane.getChildren().clear();					// clear rtpane
 		rtPane.getChildren().add(new Label("Drone Information"));
+		rtPane.getChildren().add(new Label("Food Eaten: "+arena.getScore()));
 		ArrayList<String> allStats= arena.describeAll();
 		for (String s : allStats) {
 			Label l = new Label(s); 		// turn description into a label
@@ -239,6 +233,7 @@ public class DroneGUI extends Application {
 	        public void handle(long currentNanoTime) {					// and its action when on
 	        		arena.checkDrones();									// check the angle of all Drones
 		            arena.adjustDrones();								// move all Drones
+					arena.removeDrones();
 		            drawWorld();										// redraw the world
 		            drawStatus();										// indicate where Drones are
 	        }

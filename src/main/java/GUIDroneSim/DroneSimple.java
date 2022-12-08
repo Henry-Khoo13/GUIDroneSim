@@ -25,11 +25,13 @@ public class DroneSimple extends Drone {
 		super(ix, iy, ir);
 		Angle = ia;
 		Speed = is;
+		Eaten = false;
+
 	}
 	public DroneSimple(double ix, double iy, double ir, Direction di, double is) {
 		super(ix, iy, ir);
 		Speed = is;
-
+		Eaten = false;
 		DroneDirection = di;
 		switch(DroneDirection) {//Applying direction
 			case North:

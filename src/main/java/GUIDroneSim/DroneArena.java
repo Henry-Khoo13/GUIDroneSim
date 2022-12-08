@@ -7,8 +7,9 @@ import java.util.random.RandomGenerator;
 
 public class DroneArena {
 	double xSize, ySize;						// size of arena
-	private ArrayList<Drone> DroneList;			// array list of all Drones in arena
 
+	private ArrayList<Drone> DroneList;			// array list of all Drones in arena
+	private int score;
 	private double GeneralDroneRad = 15;
 	/**
 	 * construct an arena
@@ -26,7 +27,14 @@ public class DroneArena {
 		ySize = yS;
 		DroneList = new ArrayList<Drone>();					// list of all Drones, initially empty
 		DroneList.add(new DroneSimple(xS/2, yS/2, 15, Direction.getRandomDirection(), 1));	// add SimpleDrone
-
+		score = 0;
+	}
+	/**
+	 * return arena score
+	 * @return
+	 */
+	public int getScore() {
+		return score;
 	}
 	/**
 	 * return arena size in x direction
@@ -55,8 +63,20 @@ public class DroneArena {
 	}
 
 	
-	public void adjustDrones() {
-		for (Drone D : DroneList) D.adjustDrone();
+	public void adjustDrones() {for (Drone D : DroneList) D.adjustDrone();}     //Adjust all the drone positions
+
+	/**
+	 * removeDrones
+	 * Removes drones that have been eaten.
+	 */
+	public void removeDrones() {
+		for(int i = 0; i < DroneList.size();i++){
+			if(DroneList.get(i).getEaten()){
+				DroneList.remove(i);
+				score++;
+			}
+		}
+
 	}//Adjust all the drone positions
 	/**
 	 * return list of strings defining each Drone
@@ -133,6 +153,24 @@ public class DroneArena {
 	}
 
 	/**
+	 * If Drone hits food return true to indicate it's eaten
+	 * @param x
+	 * @param y
+	 * @param rad
+	 * @param notID
+	 * @return
+	 */
+	public boolean DroneHitFood(double x, double y, double rad, int notID) {
+
+		for (Drone Dr : DroneList) {//If it's colliding with a drone reverse the direction of the drone
+			if (Dr.getID() != notID && Dr.hitting(x, y, rad)) {
+				return true;
+			}
+		}
+		return false;//return direction
+	}
+
+	/**
 	 * AdjustXAgainstWall
 	 * To prevent the drone from constantly grinding against the wall affecting the checkdrone function
 	 * This function provides X coordinates to pull the drone away from the Wall
@@ -195,8 +233,11 @@ public class DroneArena {
 		}
 		if(AddDrone == true) DroneList.add(new DroneReflect(xSize/2, ySize/2, 15, 45, 1));
 	}
+
+
 	public void ClearDrones(){//Clears the drone list
 		DroneList = new ArrayList<Drone>();
+		score=0;
 	}
 
 
@@ -234,7 +275,7 @@ public class DroneArena {
 	 * @return
 	 */
 	public boolean checkDroneLocationCenterValid(double x, double y, double rad) {
-		if (((xSize/2)-(rad*5) < x) && (x < (xSize/2)+(rad*5))&&((ySize/2)-(rad*5) < y) && (y < (ySize/2)+(rad*5))) return false;
+		if (((xSize/2)-(rad*3) < x) && (x < (xSize/2)+(rad*3))&&((ySize/2)-(rad*3) < y) && (y < (ySize/2)+(rad*3))) return false;
 		return true;
 	}
 
@@ -307,6 +348,15 @@ public class DroneArena {
 			while (!(checkDroneLocationValid(Tx, Ty, GeneralDroneRad)) || !(checkDroneLocationCenterValid(Tx, Ty, GeneralDroneRad)));
 
 			DroneList.add(new DroneObject(Tx, Ty, 15));
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+	public void addDroneFood(double xi, double yi){
+		try {
+			if ((checkDroneLocationValid(xi, yi, GeneralDroneRad)) && (checkDroneLocationCenterValid(xi, yi, GeneralDroneRad)))
+				DroneList.add(new DroneFood(xi, yi, 15));
 		}
 		catch(Exception e){
 			System.out.println(e);

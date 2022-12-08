@@ -21,7 +21,8 @@ public class DroneReflect extends Drone{
         super(ix, iy, ir);
         Angle = ia;
         Speed = is;
-        col = 'g';
+        col = 'o';
+        Eaten = false;
     }
 
     /**
