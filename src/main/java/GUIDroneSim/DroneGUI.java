@@ -41,7 +41,7 @@ public class DroneGUI extends Application {
 	    Alert alert = new Alert(AlertType.INFORMATION);				// define what box is
 	    alert.setTitle("About");									// say is About
 	    alert.setHeaderText(null);
-	    alert.setContentText("Henry's Drone GUI");			// give text
+	    alert.setContentText("29007434's Drone GUI");			// give text
 	    alert.showAndWait();										// show box and wait for user to close
 	}
 	/**
@@ -259,7 +259,7 @@ public class DroneGUI extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		primaryStage.setTitle("Henry's Drone Program");
+		primaryStage.setTitle("29007434's Drone Program");
 	    BorderPane bp = new BorderPane();
 	    bp.setPadding(new Insets(10, 20, 10, 20));
 

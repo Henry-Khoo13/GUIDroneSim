@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="GUI ADDITIONS FINALLY ADDED">
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" afterDir="false" />
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Final">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670497566366</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="GUI ADDITIONS FINALLY ADDED">
+      <created>1670497845837</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670497845837</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Final">
+      <created>1670498078306</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670498078306</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +249,8 @@
     <MESSAGE value="Comments added" />
     <MESSAGE value="Just adding final touches" />
     <MESSAGE value="GUI ADDITIONS FINALLY ADDED" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI ADDITIONS FINALLY ADDED" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
