@@ -80,7 +80,7 @@ public class DroneGUI extends Application {
 	  * set up the mouse event - when mouse pressed, put Drone there
 	  * @param canvas
 	  */
-	void setMouseEvents (Canvas canvas) {
+	private void setMouseEvents (Canvas canvas) {
 	       canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, 		// for MOUSE PRESSED event
 	    	       new EventHandler<MouseEvent>() {
 	    	           @Override

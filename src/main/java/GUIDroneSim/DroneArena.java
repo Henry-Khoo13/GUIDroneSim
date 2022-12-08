@@ -6,7 +6,7 @@ import GUIDroneSim.Directions.Direction;
 import java.util.random.RandomGenerator;
 
 public class DroneArena {
-	double xSize, ySize;						// size of arena
+	private double xSize, ySize;						// size of arena
 
 	private ArrayList<Drone> DroneList;			// array list of all Drones in arena
 	private int score;

@@ -2,7 +2,7 @@ package GUIDroneSim;
 
 public class DroneReflect extends Drone{
 
-    double Angle, Speed;			// angle and speed of travel
+    private double Angle, Speed;			// angle and speed of travel
     /**
      *
      */

@@ -4,9 +4,9 @@ import GUIDroneSim.Directions.Direction;
 
 public class DroneSimple extends Drone {
 
-	double Angle, Speed;			// angle and speed of travel
-	double Cx, Cy;
-	Direction DroneDirection;
+	private double Speed;			// angle and speed of travel
+	private double Cx, Cy;
+	private Direction DroneDirection;
 	/**
 	 * 
 	 */
@@ -14,20 +14,14 @@ public class DroneSimple extends Drone {
 		// TODO Auto-generated constructor stub
 	}
 
-	/** Create game Drone, size ir ay ix,iy, moving at angle ia and speed is
+	/**
+	 * Create game Drone, size ir ay ix,iy, moving at angle ia and speed is
 	 * @param ix
 	 * @param iy
 	 * @param ir
-	 * @param ia
+	 * @param di
 	 * @param is
 	 */
-	public DroneSimple(double ix, double iy, double ir, double ia, double is) {
-		super(ix, iy, ir);
-		Angle = ia;
-		Speed = is;
-		Eaten = false;
-
-	}
 	public DroneSimple(double ix, double iy, double ir, Direction di, double is) {
 		super(ix, iy, ir);
 		Speed = is;
