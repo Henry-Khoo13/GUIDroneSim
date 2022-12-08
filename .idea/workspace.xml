@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Just adding final touches">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="GUI ADDITIONS FINALLY ADDED">
       <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670496771235</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="GUI ADDITIONS FINALLY ADDED">
+      <created>1670497566366</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670497566366</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +234,8 @@
     <MESSAGE value="Exception handling added" />
     <MESSAGE value="Comments added" />
     <MESSAGE value="Just adding final touches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Just adding final touches" />
+    <MESSAGE value="GUI ADDITIONS FINALLY ADDED" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI ADDITIONS FINALLY ADDED" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

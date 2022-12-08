@@ -52,9 +52,14 @@ public class DroneGUI extends Application {
 		alert.setTitle("About");									// say is About
 		alert.setHeaderText(null);
 		alert.setContentText("The Following Program is a simulation of multiple different drones." + "\n" +
-							"Click the buttons at the bottom of the screen to add drones" + "\n" +
-							"Click on the screen itself to add food which drones can eat for points"+ "\n" +
-				            "Note: You cannot add food on top of drones or in the middle to block drones spawning in");		// give text
+				"Click the buttons at the bottom of the screen to add drones" + "\n" +
+				"Click on the screen itself to add food which drones can eat for points"+ "\n" +
+				"C - Means Spawn the drone from the center"+ "\n" +
+				"R- Means Spawn the drone from a random location" + "\n" +
+				"Clear - Means Clear all drones" + "\n" +
+				"Start - Means Start Animation" + "\n" +
+				"Pause - Means Stop Animation" + "\n" +
+				"Note: You cannot add food on top of drones or in the middle to block drones spawning in");		// give text
 		alert.showAndWait();										// show box and wait for user to close
 	}
 
