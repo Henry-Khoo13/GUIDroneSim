@@ -26,8 +26,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- * @author shsmchlr
- * Example with balls, paddles and targets in arena
+ * Drones GUI application
  */
 public class DroneGUI extends Application {
 	private MyCanvas mc;
@@ -47,7 +46,7 @@ public class DroneGUI extends Application {
 	}
 
 	 /**
-	  * set up the mouse event - when mouse pressed, put ball there
+	  * set up the mouse event - when mouse pressed, put Drone there
 	  * @param canvas
 	  */
 	void setMouseEvents (Canvas canvas) {
@@ -113,16 +112,39 @@ public class DroneGUI extends Application {
 	       }
 	    });
 
-	    Button btnAdd = new Button("Drone Center");				// now button for stop
-	    btnAdd.setOnAction(new EventHandler<ActionEvent>() {
+	    Button btnAddC = new Button("Drone Center");				// now button for Add drone center
+	    btnAddC.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent event) {
 	           	arena.addDrone();								// and its action to stop the timer
 	           	drawWorld();
 	       }
 	    });
-	    														// now add these buttons + labels to a HBox
-	    return new HBox(new Label(" Run: "), btnStart, btnStop, new Label("  Add: "), btnAdd);
+
+		Button btnAddR = new Button("Drone Random");				// now button for stop
+		btnAddR.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				arena.addDroneRandom();							// and its action to stop the timer
+				drawWorld();
+			}
+		});
+
+		Button btnClear = new Button("Clear Drones");				// now button for Clear Drone
+		btnClear.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				arena.ClearDrones();							// and its action to stop the timer
+				drawWorld();
+			}
+		});														// now add these buttons + labels to a HBox
+	    return new HBox(new Label(" Run: "),
+				btnStart,
+				btnStop,
+				new Label("  Add Simple: "),
+				btnAddC,btnAddR,
+				new Label("  Clear: "),
+				btnClear);
 	}
 
 	/**
@@ -131,11 +153,9 @@ public class DroneGUI extends Application {
 	 * @param y
 	 * @param score
 	 */
-	public void showScore (double x, double y, int score) {
-		mc.showText(x, y, Integer.toString(score));
-	}
+	public void showScore (double x, double y, int score) {mc.showText(x, y, Integer.toString(score));}
 	/** 
-	 * draw the world with ball in it
+	 * draw the world (Drones and Canvas)
 	 */
 	public void drawWorld () {
 	 	mc.clearCanvas();						// set beige colour
@@ -143,13 +163,13 @@ public class DroneGUI extends Application {
 	}
 	
 	/**
-	 * show where ball is, in pane on right
+	 * Status of each drone is displayed on the side
 	 */
 	public void drawStatus() {
 		rtPane.getChildren().clear();					// clear rtpane
 		rtPane.getChildren().add(new Label("Drone Information"));
-		ArrayList<String> allBs = arena.describeAll();
-		for (String s : allBs) {
+		ArrayList<String> allStats= arena.describeAll();
+		for (String s : allStats) {
 			Label l = new Label(s); 		// turn description into a label
 			rtPane.getChildren().add(l);	// add label	
 		}	
@@ -182,10 +202,10 @@ public class DroneGUI extends Application {
 	    
 	    timer = new AnimationTimer() {									// set up timer
 	        public void handle(long currentNanoTime) {					// and its action when on
-	        		arena.checkDrones();									// check the angle of all balls
-		            arena.adjustDrones();								// move all balls
+	        		arena.checkDrones();									// check the angle of all Drones
+		            arena.adjustDrones();								// move all Drones
 		            drawWorld();										// redraw the world
-		            drawStatus();										// indicate where balls are
+		            drawStatus();										// indicate where Drones are
 	        }
 	    };
 

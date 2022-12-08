@@ -1,11 +1,15 @@
 package GUIDroneSim;
 
 import java.util.ArrayList;
+import java.util.*;
 import GUIDroneSim.Directions.Direction;
+import java.util.random.RandomGenerator;
 
 public class DroneArena {
 	double xSize, ySize;						// size of arena
-	private ArrayList<Drone> DroneList;			// array list of all balls in arena
+	private ArrayList<Drone> DroneList;			// array list of all Drones in arena
+
+	private double GeneralDroneRad = 15;
 	/**
 	 * construct an arena
 	 */
@@ -20,13 +24,9 @@ public class DroneArena {
 	DroneArena(double xS, double yS){
 		xSize = xS;
 		ySize = yS;
-		DroneList = new ArrayList<Drone>();					// list of all balls, initially empty
-		//DroneList.add(new DroneSimple(xS/2, yS/2, 50, 180, 1));	// add SimpleDrone
+		DroneList = new ArrayList<Drone>();					// list of all Drones, initially empty
 		DroneList.add(new DroneSimple(xS/2, yS/2, 15, Direction.getRandomDirection(), 1));	// add SimpleDrone
-		//allBalls.add(new TargetBall(xS/2, 30, 15));			// add target ball
-		//allBalls.add(new PaddleBall(xS/2, yS-20, 20));		// add paddle
-		//allBalls.add(new BlockerBall(xS/3, yS/4, 15));		// add blocker
-		//allBalls.add(new BlockerBall(2*xS/3, yS/4, 15));	// add blocker
+
 	}
 	/**
 	 * return arena size in x direction
@@ -43,66 +43,56 @@ public class DroneArena {
 		return ySize;
 	}
 	/**
-	 * draw all balls in the arena into interface bi
-	 * @param bi
+	 * draw all Drones in the arena into interface bi
+	 * @param
 	 */
 	public void drawArena(MyCanvas mc) {
-		for (Drone b : DroneList) b.drawBall(mc);		// draw all balls
+		for (Drone D : DroneList) D.drawDrone(mc);		// draw all Drones
 	}
-	/**
-	 * check all balls .. see if need to change angle of moving balls, etc 
-	 */
-	public void checkBalls() {
-		for (Drone b : DroneList) b.checkBall(this);	// check all balls
-	}
-	
+
 	public void checkDrones() {
-		for (Drone b : DroneList) b.checkDrone(this);	// check all balls
+		for (Drone D : DroneList) D.checkDrone(this);	// check all Drones
 	}
-	/**
-	 * adjust all balls .. move any moving onesadjustDrone
-	 */
-	public void adjustBalls() {
-		for (Drone b : DroneList) b.adjustBall();
-	}
+
 	
 	public void adjustDrones() {
-		for (Drone b : DroneList) b.adjustDrone();
+		for (Drone D : DroneList) D.adjustDrone();
 	}
 	/**
-	 * return list of strings defining each ball
+	 * return list of strings defining each Drone
 	 * @return
 	 */
 	public ArrayList<String> describeAll() {
 		ArrayList<String> ans = new ArrayList<String>();		// set up empty arraylist
-		for (Drone b : DroneList) ans.add(b.toString());			// add string defining each ball
+		for (Drone b : DroneList) ans.add(b.toString());			// add string defining each Drone
 		return ans;												// return string list
 	}
 	/** 
-	 * Check angle of ball ... if hitting wall, rebound; if hitting ball, change angle
-	 * @param x				ball x position
+	 * Check angle of Drone ... if hitting wall, rebound; if hitting Drone, change angle
+	 * This Check is only used by the Reflection Drone
+	 * @param x				Drone x position
 	 * @param y				y
 	 * @param rad			radius
 	 * @param ang			current angle
-	 * @param notID			identify of ball not to be checked
+	 * @param notID			identify of Drone not to be checked
 	 * @return				new angle 
 	 */
 	
-	public double CheckBallAngle(double x, double y, double rad, double ang, int notID) {
+	public double CheckDroneAngle(double x, double y, double rad, double ang, int notID) {
 		double ans = ang;
 		if (x < rad || x > xSize - rad) ans = 90;
-			// if ball hit (tried to go through) left or right walls, set mirror angle, being 180-angle
+			// if Drone hit (tried to go through) left or right walls, set mirror angle, being 180-angle
 		if (y < rad || y > ySize - rad) ans = -0;
 			// if try to go off top or bottom, set mirror angle
 		
 		for (Drone Dr : DroneList) 
 			if (Dr.getID() != notID && Dr.hitting(x, y, rad)) ans = 180*Math.atan2(y-Dr.getY(), x-Dr.getX())/Math.PI;
-				// check all balls except one with given id
-				// if hitting, return angle between the other ball and this one.
+				// check all Drones except one with given id
+				// if hitting, return angle between the other Drone and this one.
 		
 		return ans;		// return the angle
 	}
-	
+
 	public Direction UpdateDroneDirection(double x, double y, double rad, Direction D, int notID) {
 		Direction TDirection = D;
 		if (x < rad) return Direction.North;
@@ -143,28 +133,44 @@ public class DroneArena {
 		if (y > ySize - rad) return -(Speed*1);
 		return ans;
 	}
-	/**
-	 * check if the target ball has been hit by another ball
-	 * @param target	the target ball
-	 * @return 	true if hit
-	 */
-	/*
-	public boolean checkHit(Drone target) {
-		boolean ans = false;
-		for (Ball b : allBalls)
-			if (b instanceof GameBall && b.hitting(target)) ans = true;
-				// try all balls, if GameBall, check if hitting the target
-		return ans;
-	}
-	*/
-	public void addBall() {
-		DroneList.add(new DroneSimple(xSize/2, ySize/2, 10, 60, 5));
-	}
+
+
+
 	public void addDrone() {
 		boolean AddDrone = true;
 		for (Drone Dr : DroneList) {
 			if(Dr.hitting(xSize/2, ySize/2, 15)) AddDrone = false;
 		}
 		if(AddDrone == true) DroneList.add(new DroneSimple(xSize/2, ySize/2, 15, Direction.getRandomDirection(), 1));
+	}
+
+	public void ClearDrones(){
+		DroneList = new ArrayList<Drone>();
+	}
+
+
+
+	public boolean CheckDroneLocationValid(double x, double y, double rad) {
+		if (x < rad) return false;
+		if (x > xSize - rad) return  false;
+		if (y < rad) return false;
+		if (y > ySize - rad) return false;
+		//if((x < rad)&&(y < rad))
+		for (Drone Dr : DroneList) {
+			if (Dr.hitting(x, y, rad)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	public void addDroneRandom(){
+		Random RandomDirection = new Random();
+		double Tx,Ty;
+		do {
+			Tx = RandomDirection.nextDouble(xSize);
+			Ty = RandomDirection.nextDouble(ySize);
+		}
+		while(!(CheckDroneLocationValid(Tx,Ty,GeneralDroneRad)));
+		DroneList.add(new DroneSimple(Tx, Ty, GeneralDroneRad, Direction.getRandomDirection(), 1));
 	}
 }

@@ -82,7 +82,7 @@ public class DroneGUI extends Application {
 			
 		return menuBar;					// return the menu, so can be added
 	}
-	
+
 	public void DisplayDroneInformation() {
 		rtPane.getChildren().clear();					// clear rtpane
 				// now create label

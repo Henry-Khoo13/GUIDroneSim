@@ -94,7 +94,7 @@ public class MyCanvas {
 		gc.setFill(c);
 	}
 	/**
-	 * show the ball at position x,y , radius r in colour defined by col
+	 * show the Drone at position x,y , radius r in colour defined by col
 	 * @param x
 	 * @param y
 	 * @param rad
