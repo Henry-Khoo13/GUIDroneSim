@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Console Added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneReflect.java" afterDir="false" />
+    <list default="true" id="417c21d5-ed54-4276-802b-fa14cc3e6d86" name="Changes" comment="Comments and Reflect Drone Operational">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DroneConsole/DroneGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DroneConsole/DroneGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/Drone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneArena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneArena.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneSimple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneReflect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUIDroneSim/DroneReflect.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670445612803</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Comments and Reflect Drone Operational">
+      <created>1670484833317</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670484833317</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +205,8 @@
     <MESSAGE value="WEEK 4 ish DONE" />
     <MESSAGE value="GUI  Functional" />
     <MESSAGE value="Console Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Console Added" />
+    <MESSAGE value="Comments and Reflect Drone Operational" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments and Reflect Drone Operational" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

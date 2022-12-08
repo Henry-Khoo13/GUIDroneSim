@@ -80,16 +80,16 @@ public class DroneArena {
 	
 	public double CheckDroneAngle(double x, double y, double rad, double ang, int notID) {
 		double ans = ang;
-		if (x < rad || x > xSize - rad) ans = 90;
-			// if Drone hit (tried to go through) left or right walls, set mirror angle, being 180-angle
-		if (y < rad || y > ySize - rad) ans = -0;
-			// if try to go off top or bottom, set mirror angle
-		
-		for (Drone Dr : DroneList) 
+		if (x < rad || x > xSize - rad) ans = 180 - ans;
+		// if ball hit (tried to go through) left or right walls, set mirror angle, being 180-angle
+		if (y < rad || y > ySize - rad) ans = - ans;
+		// if try to go off top or bottom, set mirror angle
+
+		for (Drone Dr : DroneList)
 			if (Dr.getID() != notID && Dr.hitting(x, y, rad)) ans = 180*Math.atan2(y-Dr.getY(), x-Dr.getX())/Math.PI;
 				// check all Drones except one with given id
 				// if hitting, return angle between the other Drone and this one.
-		
+
 		return ans;		// return the angle
 	}
 
@@ -136,21 +136,27 @@ public class DroneArena {
 
 
 
-	public void addDrone() {
+	public void addDroneSimple() {
 		boolean AddDrone = true;
 		for (Drone Dr : DroneList) {
 			if(Dr.hitting(xSize/2, ySize/2, 15)) AddDrone = false;
 		}
 		if(AddDrone == true) DroneList.add(new DroneSimple(xSize/2, ySize/2, 15, Direction.getRandomDirection(), 1));
 	}
-
+	public void addDroneReflect() {
+		boolean AddDrone = true;
+		for (Drone Dr : DroneList) {
+			if(Dr.hitting(xSize/2, ySize/2, 15)) AddDrone = false;
+		}
+		if(AddDrone == true) DroneList.add(new DroneReflect(xSize/2, ySize/2, 15, 45, 1));
+	}
 	public void ClearDrones(){
 		DroneList = new ArrayList<Drone>();
 	}
 
 
 
-	public boolean CheckDroneLocationValid(double x, double y, double rad) {
+	public boolean checkDroneLocationValid(double x, double y, double rad) {
 		if (x < rad) return false;
 		if (x > xSize - rad) return  false;
 		if (y < rad) return false;
@@ -163,14 +169,72 @@ public class DroneArena {
 		}
 		return true;
 	}
-	public void addDroneRandom(){
+
+	public boolean checkDroneLocationCenterValid(double x, double y, double rad) {
+		if (((xSize/2)-(rad*5) < x) && (x < (xSize/2)+(rad*5))&&((ySize/2)-(rad*5) < y) && (y < (ySize/2)+(rad*5))) return false;
+		return true;
+	}
+	public void addDroneRandomSimple(){
 		Random RandomDirection = new Random();
 		double Tx,Ty;
-		do {
-			Tx = RandomDirection.nextDouble(xSize);
-			Ty = RandomDirection.nextDouble(ySize);
+		int Counter = 0;
+		try {
+			do {
+				Tx = RandomDirection.nextDouble(xSize);
+				Ty = RandomDirection.nextDouble(ySize);
+				Counter++;
+				if(Counter > 100){
+					throw new RuntimeException();
+				}
+			}
+			while (!(checkDroneLocationValid(Tx, Ty, GeneralDroneRad)));
+			DroneList.add(new DroneSimple(Tx, Ty, GeneralDroneRad, Direction.getRandomDirection(), 1));
 		}
-		while(!(CheckDroneLocationValid(Tx,Ty,GeneralDroneRad)));
-		DroneList.add(new DroneSimple(Tx, Ty, GeneralDroneRad, Direction.getRandomDirection(), 1));
+		catch(Exception e){
+				System.out.println(e);
+		}
+	}
+
+	public void addDroneRandomReflect(){
+		Random RandomDirection = new Random();
+		double Tx,Ty;
+		int Counter = 0;
+		try {
+			do {
+				Tx = RandomDirection.nextDouble(xSize);
+				Ty = RandomDirection.nextDouble(ySize);
+				Counter++;
+				if(Counter > 100){
+					throw new RuntimeException();
+				}
+			}
+			while(!(checkDroneLocationValid(Tx,Ty,GeneralDroneRad)));
+			DroneList.add(new DroneReflect(Tx, Ty,  15, 45, 1));
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+
+	public void addDroneObject(){
+		Random RandomDirection = new Random();
+		int Counter = 0;
+		try {
+			double Tx, Ty;
+			do {
+				Tx = RandomDirection.nextDouble(xSize);
+				Ty = RandomDirection.nextDouble(ySize);
+				Counter++;
+				if(Counter > 100){
+					throw new RuntimeException();
+				}
+			}
+			while (!(checkDroneLocationValid(Tx, Ty, GeneralDroneRad)) || !(checkDroneLocationCenterValid(Tx, Ty, GeneralDroneRad)));
+
+			DroneList.add(new DroneObject(Tx, Ty, 15));
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 	}
 }

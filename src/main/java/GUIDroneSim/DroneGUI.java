@@ -112,23 +112,54 @@ public class DroneGUI extends Application {
 	       }
 	    });
 
-	    Button btnAddC = new Button("Drone Center");				// now button for Add drone center
+	    Button btnAddC = new Button(" Ctr");				// now button for Add drone center
 	    btnAddC.setOnAction(new EventHandler<ActionEvent>() {
 	        @Override
 	        public void handle(ActionEvent event) {
-	           	arena.addDrone();								// and its action to stop the timer
+	           	arena.addDroneSimple();								// and its action to stop the timer
 	           	drawWorld();
 	       }
 	    });
 
-		Button btnAddR = new Button("Drone Random");				// now button for stop
+		Button btnAddR = new Button(" Rand");				// now button for stop
 		btnAddR.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				arena.addDroneRandom();							// and its action to stop the timer
+				arena.addDroneRandomSimple();							// and its action to stop the timer
 				drawWorld();
 			}
 		});
+
+
+
+		Button btnAddCR = new Button("Ctr");				// now button for Add drone center
+		btnAddCR.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				arena.addDroneReflect();								// and its action to stop the timer
+				drawWorld();
+			}
+		});
+
+		Button btnAddRR = new Button("Rand");				// now button for stop
+		btnAddRR.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				arena.addDroneRandomReflect();							// and its action to stop the timer
+				drawWorld();
+			}
+		});
+
+		Button btnAddRO = new Button("Rand");				// now button for stop
+		btnAddRO.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				arena.addDroneObject();							// and its action to stop the timer
+				drawWorld();
+			}
+		});
+
+
 
 		Button btnClear = new Button("Clear Drones");				// now button for Clear Drone
 		btnClear.setOnAction(new EventHandler<ActionEvent>() {
@@ -143,6 +174,10 @@ public class DroneGUI extends Application {
 				btnStop,
 				new Label("  Add Simple: "),
 				btnAddC,btnAddR,
+				new Label("  Add Reflect: "),
+				btnAddCR,btnAddRR,
+				new Label("  Add Object: "),
+				btnAddRO,
 				new Label("  Clear: "),
 				btnClear);
 	}

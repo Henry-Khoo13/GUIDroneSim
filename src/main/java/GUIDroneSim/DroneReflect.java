@@ -21,6 +21,7 @@ public class DroneReflect extends Drone{
         super(ix, iy, ir);
         Angle = ia;
         Speed = is;
+        col = 'g';
     }
 
     /**
@@ -46,7 +47,7 @@ public class DroneReflect extends Drone{
      * return string defining Drone type
      */
     protected String getStrType() {
-        return "Reflect Drone";
+        return "Reflect Drone "+DroneID+" ";
     }
 
 
